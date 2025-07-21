@@ -22,7 +22,9 @@ function Card(props) {
             </div>
           </div>
           <div className="col-md-4">
-            <button className="btn btn-primary">edit</button>
+            <Link className="btn btn-primary" to="/Edit">
+              edit
+            </Link>
             <button className="btn btn-danger">delete</button>
           </div>
         </div>
