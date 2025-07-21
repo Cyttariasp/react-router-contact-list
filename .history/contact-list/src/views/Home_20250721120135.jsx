@@ -4,9 +4,7 @@ function Home() {
   return (
     <div>
       <div>
-        <Link className="btn btn-success" to="/add">
-          Add new contact
-        </Link>
+        <button className="btn btn-success"> Add new contact</button>
       </div>
       <div className="card mb-3" style={{ width: "75rem" }}>
         <div className="row g-0">

@@ -5,6 +5,7 @@ function Home() {
     <div>
       <div>
         <Link className="btn btn-success" to="/add">
+          {" "}
           Add new contact
         </Link>
       </div>

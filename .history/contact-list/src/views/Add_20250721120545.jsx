@@ -49,7 +49,7 @@ function Add() {
         />
       </div>
       <button className="btn btn-primary">Save</button>
-      <Link to="/"> Back to contact list</Link>
+      <a href="/"> Back to contact list</a>
     </div>
   );
 }
