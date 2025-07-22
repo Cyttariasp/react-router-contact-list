@@ -3,17 +3,16 @@ import { Link } from "react-router-dom";
 function Card(props) {
   return (
     <div>
-      <div className="card mb-3" style={{ width: "75rem" }}>
+      <div className="card mb-3 p-3" style={{ width: "75rem" }}>
         <div className="row g-0">
-          <div className="col-md-4">
+          <div className="col-md-4 d-flex justify-content-start align-items-center">
             <img
-              //src="https://images.pexels.com/photos/32935737/pexels-photo-32935737.jpeg"
               src={props.image}
-              classNameName="card-img-left rounded-circle"
+              className="card-img-left rounded-circle"
               style={{ width: "10rem", height: "10rem" }}
             />
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 d-flex align-items-start">
             <div className="card-body">
               <h5 className="card-title">{props.Name}</h5>
               <p className="card-text">{props.addres}</p>
@@ -21,11 +20,56 @@ function Card(props) {
               <p className="card-text">{props.mail}</p>
             </div>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 d-flex justify-content-end align-items-center gap-2">
             <Link className="btn btn-primary" to="/Edit">
               edit
             </Link>
-            <button className="btn btn-danger">delete</button>
+            <button
+              className="btn btn-danger"
+              data-bs-toggle="modal"
+              data-bs-target={`#modal-${props.id}`}
+              //tengo que solucionar esta parte del ID
+            >
+              Delete
+            </button>
+            <div
+              className="modal fade"
+              id={`modal-${props.id}`}
+              // esta es la otra parte del ID que tengo que arreglar
+              tabIndex="-1"
+            >
+              <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title">Are you shure?</h5>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div className="modal-body">
+                    <p>
+                      If you delete this thing the entire universe will go
+                      down!.
+                    </p>
+                  </div>
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Cancel
+                    </button>
+                    <button type="button" className="btn btn-danger">
+                      Confirm!
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

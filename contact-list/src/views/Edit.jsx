@@ -48,8 +48,12 @@ function Edit() {
           placeholder="calle 1234, Ciudad, Pais"
         />
       </div>
-      <button className="btn btn-primary">Save</button>
-      <Link to="/"> Back to contact list</Link>
+      <div className="d-flex justify-content-center my-3">
+        <button className="btn btn-primary">Save</button>
+      </div>
+      <Link className="d-block" to="/">
+        Back to contact list
+      </Link>
     </div>
   );
 }
