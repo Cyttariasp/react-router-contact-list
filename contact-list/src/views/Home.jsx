@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import Card from "../ContactCard";
+import useGlobalReducer from "../hooks/useGlobalReducer";
 
-function Home() {
+const Home = () => {
+  const { store } = useGlobalReducer();
+  console.log(store);
+
   return (
     <div>
       <div className="d-flex justify-content-end my-3">
@@ -17,10 +21,10 @@ function Home() {
         <li>
           <Card
             image="https://static.vecteezy.com/system/resources/previews/013/360/247/non_2x/default-avatar-photo-icon-social-media-profile-sign-symbol-vector.jpg"
-            Name="Contacto 1"
-            addres="direccion 1"
-            telefono="+569 4495 4280"
-            mail="correo@corre.cl"
+            Name={store.Name}
+            addres={store.addres}
+            telefono={store.telefono}
+            mail={store.mail}
           />
         </li>
         <li>
@@ -35,6 +39,6 @@ function Home() {
       </ul>
     </div>
   );
-}
+};
 
 export default Home;
