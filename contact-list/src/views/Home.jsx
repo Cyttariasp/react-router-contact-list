@@ -28,7 +28,7 @@ const Home = () => {
       </div>
       <ul>
         {contacts.map((contact) => (
-          <li key={contact.id}>
+          <li className="list-group-item" key={contact.id}>
             <Card
               id={contact.id}
               image="https://static.vecteezy.com/system/resources/previews/013/360/247/non_2x/default-avatar-photo-icon-social-media-profile-sign-symbol-vector.jpg"
