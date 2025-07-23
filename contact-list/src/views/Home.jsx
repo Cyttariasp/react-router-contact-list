@@ -34,7 +34,7 @@ const Home = () => {
               image="https://static.vecteezy.com/system/resources/previews/013/360/247/non_2x/default-avatar-photo-icon-social-media-profile-sign-symbol-vector.jpg"
               Name={contact.name}
               addres={contact.address}
-              telefono={contact.phone}
+              telefono={`+${contact.phone}`}
               mail={contact.email}
             />
           </li>
