@@ -16,10 +16,42 @@ function Add() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch({ type: "ADD_CONTACT", payload: form });
-    navigate("/");
+
+    const newContact = {
+      full_name: form.Name,
+      email: form.mail,
+      phone: form.telefono,
+      address: form.addres,
+      agenda_slug: "cris",
+    };
+
+    try {
+      const res = await fetch(
+        "https://playground.4geeks.com/contact/agendas/cris/contacts",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: form.Name,
+            address: form.addres,
+            phone: form.telefono,
+            email: form.mail,
+            agenda_slug: "cris",
+          }),
+        }
+      );
+
+      if (!res.ok) throw new Error("Error al crear contacto");
+
+      const data = await res.json();
+      console.log("Contacto creado:", data);
+
+      navigate("/");
+    } catch (err) {
+      console.error("Error al guardar contacto:", err);
+    }
   };
 
   return (
